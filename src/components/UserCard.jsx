@@ -2,6 +2,7 @@ import axios from "axios";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { removeUserFromFeed } from "../utils/feedSlice";
+import { User, Heart, X } from "lucide-react";
 
 const UserCard = ({ user }) => {
   const { _id, firstName, lastName, photoUrl, age, gender, about } = user;
@@ -19,26 +20,46 @@ const UserCard = ({ user }) => {
   };
 
   return (
-    <div className="card bg-base-300 w-96 shadow-xl">
-      <figure>
-        <img src={user.photoUrl} alt="photo" />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{firstName + " " + lastName}</h2>
-        {age && gender && <p>{age + ", " + gender}</p>}
-        <p>{about}</p>
-        <div className="card-actions justify-center my-4">
+    <div className="w-full max-w-sm h-[36rem] overflow-hidden rounded-3xl shadow-lg transition-all duration-300 hover:shadow-xl bg-white dark:bg-gray-800">
+      <div className="relative h-full">
+        <img
+          className="w-full h-full object-cover"
+          src={photoUrl}
+          alt={`${firstName} ${lastName}`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent">
+          <div className="absolute bottom-20 left-0 right-0 p-6 space-y-2">
+            <h2 className="text-3xl font-bold text-white">
+              {firstName}, {age}
+            </h2>
+
+            {about && (
+              <p className="text-white text-sm line-clamp-2 opacity-80">
+                {about}
+              </p>
+            )}
+          </div>
+        </div>
+        <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm rounded-full px-3 py-1">
+          <p className="text-white text-sm font-semibold flex items-center">
+            <User size={16} className="mr-2" />
+            {gender}
+          </p>
+        </div>
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-4">
           <button
-            className="btn btn-primary"
+            className="w-14 h-14 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-300 ease-in-out"
             onClick={() => handleSendRequest("ignored", _id)}
+            aria-label="Ignore profile"
           >
-            Ignore
+            <X size={24} className="text-white" />
           </button>
           <button
-            className="btn btn-secondary"
+            className="w-14 h-14 flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-full shadow-lg hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-all duration-300 ease-in-out"
             onClick={() => handleSendRequest("interested", _id)}
+            aria-label="Show interest in profile"
           >
-            Interested
+            <Heart size={24} className="text-white" />
           </button>
         </div>
       </div>

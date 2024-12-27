@@ -21,7 +21,7 @@ const Body = () => {
       dispatch(addUser(res.data));
     } catch (error) {
       if (error.status === 401) {
-        navigate("/login");
+        navigate("/");
       }
       console.log(error);
     }
@@ -32,7 +32,7 @@ const Body = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <NavBar />
       <Outlet />
       <Footer />
