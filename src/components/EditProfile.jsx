@@ -36,10 +36,15 @@ const EditProfile = ({ user }) => {
       );
       dispatch(addUser(res?.data?.data));
       setShowToast(true);
-      setTimeout(() => {
+      await new Promise((resolve) => setTimeout(resolve, 3000));
+
+      setShowToast(false);
+      navigate("/feed");
+
+      /* setTimeout(() => {
         setShowToast(false);
       }, 3000);
-      return await navigate("/feed");
+      return await navigate("/feed");*/
     } catch (err) {
       setError(err.response.data);
     }
