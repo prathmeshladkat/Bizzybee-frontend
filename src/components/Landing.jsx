@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import hero from "../assets/hero.png";
+import { BASE_URL } from "../utils/constants";
 
 const Landing = () => {
   return (
@@ -27,6 +28,7 @@ const Landing = () => {
             <Link to={"/login"} className="text-blue-400 hover:underline">
               Log in
             </Link>
+            {console.log("API URL:", BASE_URL + "/login")}
           </p>
         </div>
       </div>
