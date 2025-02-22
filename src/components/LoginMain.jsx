@@ -1,18 +1,14 @@
-import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
-import { ArrowRight, Mail, Lock, User } from "lucide-react";
+import { ArrowRight, Mail, Lock } from "lucide-react";
 
 const LoginMain = () => {
   const [emailId, setEmailId] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [isLoginForm, setIsLoginForm] = useState(true);
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
