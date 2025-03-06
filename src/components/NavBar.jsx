@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
 import { User, Users, Bell, LogOut } from "lucide-react";
-import logo from "../assets/logo.svg";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
