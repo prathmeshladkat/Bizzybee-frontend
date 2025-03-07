@@ -5,6 +5,7 @@ import { BASE_URL } from "../utils/constants";
 import { removeUser } from "../utils/userSlice";
 import axios from "axios";
 import { User, Users, Bell, LogOut } from "lucide-react";
+import logo2 from "../assets/logo2.png";
 
 const NavBar = () => {
   const user = useSelector((store) => store.user);
@@ -37,7 +38,11 @@ const NavBar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <div className="text-2xl font-bold text-rose-500 dark:text-rose-400">
-                <img src="../logo.svg" height={143} />
+                <img
+                  src={logo2}
+                  className="h-10 w-10 inline-block mr-2"
+                  alt="logo"
+                />
               </div>
               <span className="ml-2 text-xl font-semibold text-gray-800 dark:text-rose-100">
                 BizzyBee

@@ -18,42 +18,42 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to={"/privacy"}
+                  to={"/privacy-policy"}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Privacy
+                  Privacy Policy
                 </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="terms-of-service"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Consumer Health Data Privacy Policy
+                  Terms of Service
                 </a>
               </li>
               <li>
                 <Link
-                  to={"/terms"}
+                  to={"/refunds"}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Terms
+                  Refund Policy
                 </Link>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="delivery-policy"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Cookie Policy
+                  Delivery and shipping
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="contact-us"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Intellectual Property
+                  Contact Us
                 </a>
               </li>
             </ul>

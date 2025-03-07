@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo2 from "../assets/logo2.png";
 
 import bizzybee2 from "../assets/bizzybee2.png";
 const Hero = () => {
@@ -21,8 +22,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 h-full w-full">
         {/* Header */}
-        <header className="flex justify-between items-center p-6">
-          <div className="text-white text-2xl font-bold">{companyName}</div>
+        <header className="flex justify-between bg-gradient-to-b from-black to-transparent items-center p-6">
+          <div className="text-white text-2xl ml-3 -mt-4 font-bold">
+            <img
+              src={logo2}
+              className="h-10 w-10 inline-block mr-2"
+              alt="logo"
+            />
+            {companyName}
+          </div>
           <Link to={"/login"}>
             <button className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-2 rounded-full text-lg font-medium hover:from-pink-600 hover:to-rose-600 transition-all transform hover:scale-105">
               Log in
