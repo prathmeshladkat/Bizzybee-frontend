@@ -17,6 +17,7 @@ import TermsOfService from "./components/TermsOfService";
 import Refunds from "./components/Refunds";
 import ContactUs from "./components/ContactUs";
 import DeliveryPolicy from "./components/Delivery";
+import Chat from "./components/Chat";
 
 function Layout() {
   const location = useLocation();
@@ -33,12 +34,13 @@ function Layout() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/connections" element={<Connections />} />
+        <Route path="/requests" element={<Request />} />
+        <Route path="/chat/:targetUserId" element={<Chat />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
         <Route path="/refunds" element={<Refunds />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/delivery-policy" element={<DeliveryPolicy />} />
-        <Route path="/requests" element={<Request />} />
       </Routes>
       {/* Show Footer only if not on landing, signup, or login */}
     </>
